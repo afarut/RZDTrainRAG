@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Russian Rail G Pro", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Russian Rail G Pro","Arial",sans-serif;
+}
+
+.calc-height {
+  min-height: calc(100vh - 4rem);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s forwards;
+}
+
+.bg-main-color {
+  background-color: #E7382A;
+}
+
+.main-color {
+  color: #E7382A;
+}
+
+.border-main-color {
+  border-color: #E7382A;
+}
+.transition-transform {
+  transition: transform 0.5s ease-in-out;
+}
+
+.bg-gray-400 {
+  background-color: #ccc;
+}
+
+.main-gray-background {
+  background-color: #1f1f24;
+}
+.border-blue {
+  border-color: #003160;
+}
+
+.bg-blue {
+  background-color: #003160;
+}
+
+.color-blue {
+  color: #003160;
+}
+
+.transform {
+  transform: translateX(0);
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
+
+.transition-transform {
+  transition: transform 0.5s ease-in-out;
+}
+
+.translate-x-[100%] {
+  transform: translateX(100%);
+}
+
+.translate-x-[200%] {
+  transform: translateX(200%);
+}
+
+.calc-height {
+  max-height: calc(100vh - 4rem);
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #b30000;
+  transition: width 0.5s ease;
+  z-index: 0;
+}
+
+.buttong {
+  position: relative;
+  display: inline-block;
+  color: black;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.buttong::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #bbb;
+  transition: width 0.5s ease;
+  z-index: 0;
+}
+
+.buttonm {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  padding: 10px 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.buttonm::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #003e79;
+  transition: width 0.5s ease;
+  z-index: 0;
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
+.button span {
+  position: relative;
+  z-index: 1; /* Текст остаётся на переднем плане */
+}
+
+.chat-win {
+  max-width: 896px;
+  margin-inline: auto;
+}
