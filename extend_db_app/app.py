@@ -1,10 +1,7 @@
 from flask import stream_with_context, request, Flask, Response
-from rag import RAG
 from upload import get_result_csv
 
 app = Flask(__name__)
-
-model = RAG()
 
 
 @app.route('/upload', methods=["POST"])
