@@ -200,21 +200,24 @@ def get_result_csv(url):
         cv["text"] = texts
         cv["razdel"] = razdel
         cv = magic_transform(cv)
+        cv["norm"] = len(cv)
+        cv["nub"] = len(cv)
+        cv["pro"] = len(cv)
 
         texts = cv["text"].values.tolist()
         for i in range(len(texts)):
             text = texts[i]
-            cv["norm"] = get_norm_user(text)
+            cv["norm"][i] = get_norm_user(text)
             yield round((i + 1) / len(texts) * 100, 0)
 
         for i in range(len(texts)):
             text = texts[i]
-            cv["nub"] = get_new_user(text)
+            cv["nub"][i] = get_new_user(text)
             yield round((i + 1) / len(texts) * 100, 0)
 
         for i in range(len(texts)):
             text = texts[i]
-            cv["pro"] = get_old_user(text)
+            cv["pro"][i] = get_old_user(text)
             yield round((i + 1) / len(texts) * 100, 0)
 
         yield "Начинаем загрузку на Qdrant"
